@@ -19,10 +19,10 @@ def merge(A, B):
 def merge_sort(nums):
     n = len(nums)
     i = 1
-    while i < n:
-        for j in range(0, n, 2*i):
+    while i < n: # i refers to the size of pieces that will be merged on current step
+        for j in range(0, n-i, 2*i): # j points to the first element of first of merging piece
             temp = merge(nums[j:j+i], nums[j+i:min(j+2*i, n)])
-            nums[j:j+2*i] = temp
+            nums[j:min(j+2*i, n)] = temp
         i*=2
     return nums
 
