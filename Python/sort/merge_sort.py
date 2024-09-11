@@ -6,7 +6,7 @@ def merge(A, B):
             C[ia+ib] = B[ib]
             ib += 1
         else:
-            C[ia+ib] = A[ia]
+            C[ia+ib] = A[ia] # A in case B[ib] = A[ia] because we want the sorting to be stable
             ia += 1
     while (ia < len(A)):
         C[ia+ib] = A[ia]
